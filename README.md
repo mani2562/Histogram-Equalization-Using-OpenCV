@@ -70,7 +70,7 @@ Display original color image, histogram, enhanced image, and enhanced histogram 
 ## Program
 
 ### Developed By:
-## Name:** MANIKANDAN G
+## Name: MANIKANDAN G
 
 ### Register No:212225040224
 ~~~
