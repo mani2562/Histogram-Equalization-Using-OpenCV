@@ -70,10 +70,36 @@ Display original color image, histogram, enhanced image, and enhanced histogram 
 ## Program
 
 ### Developed By:
-**Name:** ____________________________  
+## Name:** MANIKANDAN G
 
-### Register No:
-____________________________  
+### Register No:212225040224
+~~~
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+from PIL import Image
+img = cv2.imread('parrot.jpg', cv2.IMREAD_GRAYSCALE)
+img.shape
+plt.imshow(img, cmap='gray')
+plt.title('Original Image')
+plt.show()
+plt.hist(img.ravel(),256,range = [0, 256]);
+plt.title('Original Image')
+plt.show()
+img_eq = cv2.equalizeHist(img)
+plt.hist(img_eq.ravel(), 256, range = [0, 256])
+plt.title('Equalized Histogram')
+plt.imshow(img_eq, cmap='gray')
+plt.title('Original Image')
+plt.show()
+img = cv2.imread('parrot.jpg', cv2.IMREAD_COLOR)
+img_hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+img_hsv[:,:,2] = cv2.equalizeHist(img_hsv[:, :, 2])
+img_eq = cv2.cvtColor(img_hsv, cv2.COLOR_HSV2BGR)
+plt.imshow(img_eq[:,:,::-1]); plt.title('Equalized Image');plt.show()
+
+
+~~~
 
 ---
 
@@ -94,6 +120,32 @@ ____________________________
 - Histogram of enhanced image shows better intensity distribution  
 
 ---
+### Original Grayscale Image
+<img width="763" height="497" alt="image" src="https://github.com/user-attachments/assets/edf65353-edee-494a-9f44-7638665be3a2" />
+
+
+### Histogram of Original Grayscale Image
+<img width="863" height="548" alt="image" src="https://github.com/user-attachments/assets/a4f895fb-7089-422e-8449-20ae58f24634" />
+
+
+### Histogram Equalization
+<img width="783" height="528" alt="image" src="https://github.com/user-attachments/assets/b4566e34-28f2-4612-9a47-85dd6f94a5b6" />
+
+
+### Equalized Grayscale Image
+<img width="756" height="500" alt="image" src="https://github.com/user-attachments/assets/0e5826d4-14fc-481f-8520-1a7ca996c7d6" />
+
+
+### Original Color Image
+<img width="743" height="502" alt="image" src="https://github.com/user-attachments/assets/d0fbb20e-630a-4061-947d-7490c02bf4f7" />
+
+### Histogram Equalized Color Image
+<img width="736" height="492" alt="image" src="https://github.com/user-attachments/assets/183500de-3d80-49ef-b9c9-9f1f4f2a03b6" />
+
+### Histogram of Equalized Color Image
+<img width="757" height="525" alt="image" src="https://github.com/user-attachments/assets/98dbd056-cc08-4a88-b5f0-c91a68c090f1" />
+
+
 
 ## Result
 
